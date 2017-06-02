@@ -1,0 +1,34 @@
+.contents {
+  padding-left: 50px;
+}
+h2 {
+  padding-left: 30px
+}
+.block {
+  background-color: #4fbcd4;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  &:hover {
+    background-color: #198b00;
+    width: 300px;
+  }
+}
+.transition-property-all {
+  transition: all .3s 0s ease;
+}
+.transition-property-bgcolor {
+  transition: background-color .3s 0s ease;
+}
+.transition-duration-300 {
+  transition: all 300ms 0s ease;
+}
+.transition-duration-1000 {
+  transition: all 1000ms 0s ease;
+}
+.transition-delay-0 {
+  transition: all 300ms 0s ease;
+}
+.transition-delay-1000 {
+  transition: all 300ms 300ms ease;
+}

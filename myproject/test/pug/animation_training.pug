@@ -1,0 +1,29 @@
+doctype html
+html(lang="ja")
+  head
+    meta(charset="utf-8")
+    link(rel="stylesheet" type="text/css" href="css/animation_training.css")
+    title Animation Training
+  body
+    .transition-contents
+      h2 Transition Property
+      .contents
+        h3 トランジションの対象にするプロパティを選べる
+        p transition-property：all
+        .transition-property-all.block
+        p transition-property：background-color
+        .transition-property-bgcolor.block
+      h2 Transition Duration
+      .contents
+        h3 トランジションが完了するまでの時間を設定できる
+        p transition-duration：300ms
+        .transition-duration-300.block
+        p transition-duration：1000ms
+        .transition-duration-1000.block
+      h2 Transition Delay
+      .contents
+        h3 トランジションが始まるまでの時間を設定できる
+        p transition-delay：0s
+        .transition-delay-0.block
+        p transition-delay：1000ms
+        .transition-delay-1000.block
