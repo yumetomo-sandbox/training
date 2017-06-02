@@ -42,7 +42,7 @@ gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
             baseDir: "src",
-            index: "youtube.html"
+            index: "sass_training.html"
         }
     });
 });
