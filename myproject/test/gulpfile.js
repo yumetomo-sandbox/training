@@ -9,7 +9,7 @@ var autoprefixer = require('gulp-autoprefixer');
 
 // sass
 gulp.task('sass', function () {
-  gulp.src( 'sass/**/*.scss' )
+  gulp.src( 'sass/velocity_training/*.scss' )
     .pipe(plumber({
       errorHandler: notify.onError('<%= error.message %>')
     }))
@@ -18,16 +18,16 @@ gulp.task('sass', function () {
         browsers: ['last 2 version', 'iOS >= 8.1', 'Android >= 4.4'],
         cascade: false
     }))
-    .pipe(gulp.dest( 'animation_training/css' ));
+    .pipe(gulp.dest( 'velocity_training/css' ));
 });
 
 // pug
 gulp.task('pug', function () {
-  gulp.src(['./pug/**/*.pug', '!./pug/**/_*.pug'])
+  gulp.src(['./pug/velocity_training/*.pug', '!./pug/**/_*.pug'])
   .pipe(pug({
     pretty: true
   }))
-  .pipe(gulp.dest('animation_training'));
+  .pipe(gulp.dest('velocity_training'));
 });
 
 // watch
@@ -41,8 +41,8 @@ gulp.task('watch', () => {
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
-            baseDir: "animation_training",
-            index: "animation_training.html"
+            baseDir: "velocity_training",
+            index: "index.html"
         }
     });
 });

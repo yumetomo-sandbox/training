@@ -1,22 +1,34 @@
+const path = require('path');
+const webpack = require('webpack');
+
 module.exports = {
   // エントリーポイントの設定
-  entry: './test/js/app.js',
+  entry: {
+    index: path.join(__dirname,'test/carousel_training/js/index.js')
+  },
   // 出力の設定
   output: {
     // 出力するファイル名
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     // 出力先のパス
-    path: 'C:\\~~中略~~\\git\\training\\myproject\\test\\src\\js'
+    path: path.join(__dirname,'test/carousel_training/js')
   },
   // ローダーの設定
   module: {
-    loaders: [{
+    rules: [{
       // ローダーの対象ファイル
       test: /\.js$/,
       // ローダーの対象から外すディレクトリ
       exclude: /node_modules/,
       // 利用するローダー
-      loader: 'babel-loader?presets[]=es2015'
+      use: 'babel-loader?presets[]=es2015'
     }]
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      velocity: 'velocity-animate',
+      _: 'underscore'
+    }),
+  ]
 };
